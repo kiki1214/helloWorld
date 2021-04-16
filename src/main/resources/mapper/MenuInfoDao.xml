@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 映射到指定的dao类 -->
+<mapper namespace="com.yidu.ssmdemo002.dao.MenuInfoDao">
+
+    <!-- 根据菜单id查询菜单信息 -->
+    <select id="selectById" parameterType="String" resultType="MenuInfo">
+        select * from menuinfo where menuid=#{menuid}
+    </select>
+
+    <!-- 查询所有 -->
+    <select id="selectAll" resultType="MenuInfo">
+        select * from menuinfo
+    </select>
+
+    <!-- 新增 -->
+    <insert id="insert" parameterType="MenuInfo">
+        insert menuinfo
+            (menuid, title, state, url, pid, iconCls)
+        value
+            (#{menuid}, #{title}, #{state}, #{url}, #{pid}, #{iconCls})
+    </insert>
+
+    <!-- 删除 -->
+    <delete id="delete" parameterType="MenuInfo">
+        delete from menuinfo where menuid=#{menuid}
+    </delete>
+
+</mapper>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 映射到指定的dao类 -->
+<mapper namespace="com.yidu.ssmdemo002.dao.RoleInfoDao">
+
+    <!-- 根据id查询角色 -->
+    <select id="selectById" parameterType="Integer" resultType="com.yidu.ssmdemo002.entity.RoleInfo">
+        select * from roleinfo where roleid=#{roleid}
+    </select>
+
+    <!-- 新增 -->
+    <insert id="insert" parameterType="com.yidu.ssmdemo002.entity.RoleInfo">
+        insert roleinfo
+            (rolename)
+        value
+            (#{rolename})
+    </insert>
+
+</mapper>

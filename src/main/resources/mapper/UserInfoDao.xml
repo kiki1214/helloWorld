@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 映射到指定的dao类 -->
+<mapper namespace="com.yidu.ssmdemo002.dao.UserInfoDao">
+
+    <!-- 登录 -->
+    <select id="login" resultType="com.yidu.ssmdemo002.entity.UserInfo">
+        select * from userinfo
+        where username = #{username} and userpass = #{userpass}
+    </select>
+
+    <!-- 注册.新增 -->
+    <insert id="insert" parameterType="com.yidu.ssmdemo002.entity.UserInfo">
+        insert userinfo
+            (username, userpass, compellation, state)
+        value
+            (#{username}, #{userpass}, #{compellation}, #{state})
+    </insert>
+
+</mapper>

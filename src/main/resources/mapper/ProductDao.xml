@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 映射到指定的dao类 -->
+<mapper namespace="com.yidu.ssmdemo002.dao.ProductDao">
+
+    <!-- 新增 -->
+    <insert id="insert" parameterType="com.yidu.ssmdemo002.entity.Product">
+        insert product
+            (pname, pimg, sketch, ptype)
+        value
+            (#{pname}, #{pimg}, #{sketch}, #{ptype})
+    </insert>
+
+</mapper>
