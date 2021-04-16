@@ -69,6 +69,10 @@ public class MenuController {
         return "showMenu";
     }
 
+    public String test(){
+        return "测试";
+    }
+
     /**
      * 新增菜单
      * @param menuInfo 菜单信息
